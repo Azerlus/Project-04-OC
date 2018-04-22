@@ -12,7 +12,7 @@ class HTTPRequest
   {
     return isset($_COOKIE[$key]);
   }
-
+  //test
   public function getData($key)
   {
     return isset($_GET[$key]) ? $_GET[$key] : null;
