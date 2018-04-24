@@ -1,5 +1,5 @@
 <?php
-namespace OCFram;
+namespace BlogFram;
  
 abstract class BackController extends ApplicationComponent
 {
