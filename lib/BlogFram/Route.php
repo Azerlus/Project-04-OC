@@ -1,5 +1,5 @@
 <?php
-namespace OCFram;
+namespace BlogFram;
 
 class Route
 {
