@@ -1,6 +1,6 @@
-app/backend/app.xml
-app/backend/routes.xml
+app/backend/config/app.xml
+app/backend/config/routes.xml
 
-app/frontend/app.xml
-app/frontend/routes.xml
+app/frontend/config/app.xml
+app/frontend/config/routes.xml
 
