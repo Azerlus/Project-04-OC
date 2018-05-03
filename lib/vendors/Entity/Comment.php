@@ -5,20 +5,23 @@ use \BlogFram\Entity;
  
 class Comment extends Entity
 {
-  protected $chapter,
+  protected $chapters,
             $auteur,
             $contenu,
+            $report,
             $date;
  
-  const AUTEUR_INVALIDE = 1;
-  const CONTENU_INVALIDE = 2;
+  const INVALID_AUTHOR = 1;
+  const INVALID_CONTENT = 2;
  
   public function isValid()
   {
     return !(empty($this->auteur) || empty($this->contenu));
   }
- 
-  public function setChapter($chapter)
+
+  // SETTERS
+
+  public function setChapters($chapter)
   {
     $this->chapter = (int) $chapter;
   }
@@ -27,7 +30,7 @@ class Comment extends Entity
   {
     if (!is_string($auteur) || empty($auteur))
     {
-      $this->erreurs[] = self::AUTEUR_INVALIDE;
+      $this->erreurs[] = self::INVALID_AUTHOR;
     }
  
     $this->auteur = $auteur;
@@ -37,18 +40,25 @@ class Comment extends Entity
   {
     if (!is_string($contenu) || empty($contenu))
     {
-      $this->erreurs[] = self::CONTENU_INVALIDE;
+      $this->erreurs[] = self::INVALID_CONTENT;
     }
  
     $this->contenu = $contenu;
   }
- 
+  
+  public function setReport($report)
+  {
+    $this->report = (int) $report;
+  }
+
   public function setDate(\DateTime $date)
   {
     $this->date = $date;
   }
+
+  // GETTERS
  
-  public function chapter()
+  public function chapters()
   {
     return $this->chapter;
   }
@@ -61,6 +71,11 @@ class Comment extends Entity
   public function contenu()
   {
     return $this->contenu;
+  }
+
+  public function report()
+  {
+    return $this->report;
   }
  
   public function date()

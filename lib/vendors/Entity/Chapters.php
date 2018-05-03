@@ -3,7 +3,7 @@ namespace Entity;
  
 use \BlogFram\Entity;
  
-class Chapter extends Entity
+class Chapters extends Entity
 {
   protected $auteur,
             $titre,
@@ -11,9 +11,9 @@ class Chapter extends Entity
             $dateAjout,
             $dateModif;
  
-  const AUTEUR_INVALIDE = 1;
-  const TITRE_INVALIDE = 2;
-  const CONTENU_INVALIDE = 3;
+  const INVALID_AUTHOR = 1;
+  const INVALID_TITLE = 2;
+  const INVALID_CONTENT = 3;
  
   public function isValid()
   {
@@ -27,7 +27,7 @@ class Chapter extends Entity
   {
     if (!is_string($auteur) || empty($auteur))
     {
-      $this->erreurs[] = self::AUTEUR_INVALIDE;
+      $this->erreurs[] = self::INVALID_AUTHOR;
     }
  
     $this->auteur = $auteur;
@@ -37,7 +37,7 @@ class Chapter extends Entity
   {
     if (!is_string($titre) || empty($titre))
     {
-      $this->erreurs[] = self::TITRE_INVALIDE;
+      $this->erreurs[] = self::INVALID_TITLE;
     }
  
     $this->titre = $titre;
@@ -47,7 +47,7 @@ class Chapter extends Entity
   {
     if (!is_string($contenu) || empty($contenu))
     {
-      $this->erreurs[] = self::CONTENU_INVALIDE;
+      $this->erreurs[] = self::INVALID_CONTENT;
     }
  
     $this->contenu = $contenu;
