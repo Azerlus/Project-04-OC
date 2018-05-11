@@ -60,7 +60,7 @@ class Comment extends Entity
  
   public function chapters()
   {
-    return $this->chapter;
+    return $this->chapters;
   }
  
   public function auteur()

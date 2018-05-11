@@ -1,7 +1,7 @@
 <?php
 namespace BlogFram;
 
-class HTTPResponse
+class HTTPResponse extends ApplicationComponent
 {
   protected $page;
 

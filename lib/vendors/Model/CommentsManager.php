@@ -36,7 +36,7 @@ abstract class CommentsManager extends Manager
   {
     if ($comment->isValid())
     {
-      $comment->isNew() ? $this->add($comment) : $this->modify($comment);
+      $this->add($comment);
     }
     else
     {
@@ -57,20 +57,13 @@ abstract class CommentsManager extends Manager
    * @return array
    */
   abstract public function getListOfReported();
-
-  /**
-   * Méthode permettant de modifier un commentaire.
-   * @param $comment Le commentaire à modifier
-   * @return void
-   */
-  abstract protected function modify(Comment $comment);
  
   /**
    * Méthode permettant de report un commentaire spécifique.
    * @param $id L'identifiant du commentaire
    * @return void
    */
-  abstract public function report($id);
+  abstract public function report(Comment $comment);
 
   /**
    * Méthode permettant d'obtenir un commentaire spécifique.

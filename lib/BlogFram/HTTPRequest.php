@@ -40,6 +40,6 @@ class HTTPRequest
 
   public function requestURL()
   {
-    return $_SERVER['REQUEST_URL'];
+    return $_SERVER['REQUEST_URI'];
   }
 }
