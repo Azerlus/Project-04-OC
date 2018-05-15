@@ -8,6 +8,8 @@ use \Entity\Comment;
  
 class ChaptersController extends BackController
 {
+  protected $defaultAuthor;
+
   public function executeDelete(HTTPRequest $request)
   {
     $chaptersId = $request->getData('id');
@@ -51,6 +53,7 @@ class ChaptersController extends BackController
     }
  
     $this->page->addVar('title', 'Ajout d\'un chapitre');
+    $this->page->addVar('defaultAuthor', $this->app->config()->get('auteur'));
   }
  
   public function executeUpdate(HTTPRequest $request)

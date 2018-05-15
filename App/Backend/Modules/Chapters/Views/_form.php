@@ -8,7 +8,7 @@
   <p>
     <?= isset($erreurs) && in_array(\Entity\Chapters::INVALID_AUTHOR, $erreurs) ? 'L\'auteur est invalide.<br />' : '' ?>
     <label>Auteur</label>
-    <input type="text" name="auteur" value="<?= isset($chapters) ? $chapters['auteur'] : '' ?>" /><br />
+    <input type="text" name="auteur" value="<?= isset($chapters) ? $chapters['auteur'] : $defaultAuthor ?>" /><br />
  
     <?= isset($erreurs) && in_array(\Entity\Chapters::INVALID_TITLE, $erreurs) ? 'Le titre est invalide.<br />' : '' ?>
     <label>Titre</label><input type="text" name="titre" value="<?= isset($chapters) ? $chapters['titre'] : '' ?>" /><br />
