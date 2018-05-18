@@ -6,8 +6,6 @@
   <p style="text-align: right;"><small><em>Modifiée le <?= $chapters['dateModif']->format('d/m/Y à H\hi') ?></em></small></p>
 <?php } ?>
  
-<p><a href="commenter-<?= $chapters['id'] ?>.html">Ajouter un commentaire</a></p>
- 
 <?php
 if (empty($comments))
 {
@@ -28,5 +26,16 @@ foreach ($comments as $comment)
 <?php
 }
 ?>
+<h2>Ajouter un commentaire</h2>
+<form action="/commenter-<?= $test ?>.html" method="post">
+  <p>
+    <?= isset($erreurs) && in_array(\Entity\Comment::INVALID_AUTHOR, $erreurs) ? 'Pseudo invalide.<br />' : '' ?>
+    <label>Pseudo</label>
+    <input type="text" name="pseudo"/><br />
  
-<p><a href="commenter-<?= $chapters['id'] ?>.html">Ajouter un commentaire</a></p>
+    <?= isset($erreurs) && in_array(\Entity\Comment::INVALID_CONTENT, $erreurs) ? 'Le contenu est invalide.<br />' : '' ?>
+    <label>Contenu</label>
+    <textarea name="contenu" rows="7" cols="50"></textarea><br />
+    <input type="submit" value="Commenter" />
+  </p>
+</form>

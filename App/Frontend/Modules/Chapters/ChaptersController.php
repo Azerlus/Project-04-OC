@@ -39,12 +39,14 @@ class ChaptersController extends BackController
   public function executeShow(HTTPRequest $request)
   {
     $chapters = $this->managers->getManagerOf('Chapters')->getUnique($request->getData('id'));
+    $test = $request->getData('id');
  
     if (empty($chapters))
     {
       $this->app->httpResponse()->redirect404();
     }
- 
+    
+    $this->page->addVar('test', $test);
     $this->page->addVar('title', $chapters->titre());
     $this->page->addVar('chapters', $chapters);
     $this->page->addVar('comments', $this->managers->getManagerOf('Comments')->getListOf($chapters->id()));
@@ -53,7 +55,6 @@ class ChaptersController extends BackController
   public function executeInsertComment(HTTPRequest $request)
   {
     $this->page->addVar('title', 'Ajout d\'un commentaire');
-    $this->page->addVar('test', $request->getData('id'));
     if ($request->postExists('pseudo'))
     {
       $comment = new Comment([
@@ -75,8 +76,6 @@ class ChaptersController extends BackController
       {
         $this->page->addVar('erreurs', $comment->erreurs());
       }
- 
-      $this->page->addVar('comment', $comment);
     }
   }
 }
