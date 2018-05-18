@@ -21,9 +21,9 @@ class Comment extends Entity
 
   // SETTERS
 
-  public function setChapters($chapter)
+  public function setChapters($chapters)
   {
-    $this->chapter = (int) $chapter;
+    $this->chapters = (int) $chapters;
   }
  
   public function setAuteur($auteur)

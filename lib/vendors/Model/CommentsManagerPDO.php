@@ -7,11 +7,13 @@ class CommentsManagerPDO extends CommentsManager
 {
   protected function add(Comment $comment)
   {
-    $q = $this->dao->prepare('INSERT INTO comments SET chapters = :chapters, auteur = :auteur, contenu = :contenu, date = NOW()');
+
+    $q = $this->dao->prepare('INSERT INTO comments SET chapters = :chapters, auteur = :auteur, contenu = :contenu, report = :report, dateAjout = NOW()');
  
     $q->bindValue(':chapters', $comment->chapters(), \PDO::PARAM_INT);
     $q->bindValue(':auteur', $comment->auteur());
     $q->bindValue(':contenu', $comment->contenu());
+    $q->bindValue(':report', $comment->report());
  
     $q->execute();
  
@@ -35,7 +37,7 @@ class CommentsManagerPDO extends CommentsManager
       throw new \InvalidArgumentException('L\'identifiant du chapitre passé doit être un nombre entier valide');
     }
  
-    $q = $this->dao->prepare('SELECT id, chapters, auteur, contenu, date FROM comments WHERE chapters = :chapters');
+    $q = $this->dao->prepare('SELECT id, chapters, auteur, contenu, dateAjout FROM comments WHERE chapters = :chapters');
     $q->bindValue(':chapters', $chapters, \PDO::PARAM_INT);
     $q->execute();
  
@@ -53,7 +55,7 @@ class CommentsManagerPDO extends CommentsManager
 
   public function getListOfReported()
   {
-    $q = $this->dao->prepare('SELECT id, chapters, auteur, contenu, date FROM comments WHERE report = :report');
+    $q = $this->dao->prepare('SELECT id, chapters, auteur, contenu, dateAjout FROM comments WHERE report = :report');
     $q->bindValue(':report', 1, \PDO::PARAM_INT);
     $q->execute();
 
