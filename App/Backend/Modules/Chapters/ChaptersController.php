@@ -17,7 +17,7 @@ class ChaptersController extends BackController
     $this->managers->getManagerOf('Chapters')->delete($chaptersId);
     $this->managers->getManagerOf('Comments')->deleteFromChapters($chaptersId);
  
-    $this->app->user()->setFlash('Le chapitre a bien été supprimée !');
+    $this->app->user()->setFlash('Le chapitre a bien été supprimé !');
  
     $this->app->httpResponse()->redirect('.');
   }
@@ -88,7 +88,7 @@ class ChaptersController extends BackController
     {
       $this->managers->getManagerOf('Chapters')->save($chapters);
  
-      $this->app->user()->setFlash($chapters->isNew() ? 'Le chapitre a bien été ajoutée !' : 'Le chapitre a bien été modifiée !');
+      $this->app->user()->setFlash($chapters->isNew() ? 'Le chapitre a bien été ajouté !' : 'Le chapitre a bien été modifié !');
     }
     else
     {

@@ -9,7 +9,7 @@ class Comment extends Entity
             $auteur,
             $contenu,
             $report,
-            $date;
+            $dateAjout;
  
   const INVALID_AUTHOR = 1;
   const INVALID_CONTENT = 2;
@@ -51,9 +51,9 @@ class Comment extends Entity
     $this->report = (int) $report;
   }
 
-  public function setDate(\DateTime $date)
+  public function setDateAjout(\DateTime $dateAjout)
   {
-    $this->date = $date;
+    $this->dateAjout = $dateAjout;
   }
 
   // GETTERS
@@ -78,8 +78,8 @@ class Comment extends Entity
     return $this->report;
   }
  
-  public function date()
+  public function dateAjout()
   {
-    return $this->date;
+    return $this->dateAjout;
   }
 }

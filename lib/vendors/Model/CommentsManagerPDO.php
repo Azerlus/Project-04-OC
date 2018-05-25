@@ -16,8 +16,6 @@ class CommentsManagerPDO extends CommentsManager
     $q->bindValue(':report', $comment->report());
  
     $q->execute();
- 
-    $comment->setId($this->dao->lastInsertId());
   }
  
   public function delete($id)
@@ -47,7 +45,7 @@ class CommentsManagerPDO extends CommentsManager
  
     foreach ($comments as $comment)
     {
-      $comment->setDate(new \DateTime($comment->date()));
+      $comment->setDateAjout(new \DateTime($comment->dateAjout()));
     }
  
     return $comments;
@@ -65,7 +63,7 @@ class CommentsManagerPDO extends CommentsManager
 
     foreach ($comments as $comment)
     {
-      $comment->setDate(new \DateTime($comment->date()));
+      $comment->setDateAjout(new \DateTime($comment->dateAjout()));
     }
 
     return $comments;

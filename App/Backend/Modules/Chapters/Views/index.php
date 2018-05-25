@@ -19,7 +19,7 @@ foreach ($listeChapters as $chapters)
 <?php
 foreach ($listeCommentsReported as $report)
 {
-	echo '<tr><td>', $report['auteur'], '</td><td>', $report['chapters'], '</td><td>', $report['date']->format('d/m/Y à H\hi'), '</td><td>', $report['contenu'], '</td></tr>', "\n";
+	echo '<tr><td>', $report['auteur'], '</td><td>', $report['chapters'], '</td><td>', $report['dateAjout']->format('d/m/Y à H\hi'), '</td><td>', $report['contenu'], '</td></tr>', "\n";
 }
 ?>
 </table>

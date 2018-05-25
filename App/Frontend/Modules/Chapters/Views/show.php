@@ -19,7 +19,7 @@ foreach ($comments as $comment)
 ?>
   <fieldset>
     <legend>
-      Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le <?= $comment['date']->format('d/m/Y à H\hi') ?>
+      Posté par <strong><?= htmlspecialchars($comment['auteur']) ?></strong> le <?= $comment['dateAjout']->format('d/m/Y à H\hi') ?>
     </legend>
     <p><?= nl2br(htmlspecialchars($comment['contenu'])) ?></p>
   </fieldset>
@@ -27,7 +27,7 @@ foreach ($comments as $comment)
 }
 ?>
 <h2>Ajouter un commentaire</h2>
-<form action="/commenter-<?= $test ?>.html" method="post">
+<form action="/commenter-<?= $id ?>.html" method="post">
   <p>
     <?= isset($erreurs) && in_array(\Entity\Comment::INVALID_AUTHOR, $erreurs) ? 'Pseudo invalide.<br />' : '' ?>
     <label>Pseudo</label>
