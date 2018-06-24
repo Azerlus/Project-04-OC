@@ -1,12 +1,12 @@
 <?php
-namespace App\Frontend\Modules\Chapters;
+namespace src\controller;
  
 use \BlogFram\BackController;
 use \BlogFram\HTTPRequest;
 use \Entity\Chapters;
 use \Entity\Comment;
  
-class ChaptersController extends BackController
+class ChaptersFrontController extends BackController
 {
   public function executeIndex(HTTPRequest $request)
   {
@@ -14,7 +14,7 @@ class ChaptersController extends BackController
     $nombreCaracteres = $this->app->config()->get('nombre_caracteres');
  
     // On ajoute une définition pour le titre.
-    $this->page->addVar('title', 'Liste des '.$nombreChapters.' derniers chapitres');
+    $this->page->addVar('title', 'Liste des derniers chapitres');
  
     // On récupère le manager des chapitres.
     $manager = $this->managers->getManagerOf('Chapters');
@@ -77,5 +77,14 @@ class ChaptersController extends BackController
         $this->page->addVar('erreurs', $comment->erreurs());
       }
     }
+  }
+
+  public function executeReportComment(HTTPRequest $request)
+  {
+    $this->managers->getManagerOf('Comments')->report($request->getData('id'));
+
+    $this->app->user()->setFlash('Le commentaire a bien été signalé !');
+ 
+    $this->app->httpResponse()->redirect('.');
   }
 }

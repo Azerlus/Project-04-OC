@@ -59,9 +59,10 @@ abstract class Application
  
     // On ajoute les variables de l'URL au tableau $_GET.
     $_GET = array_merge($_GET, $matchedRoute->vars());
- 
+
     // On instancie le contrôleur.
-    $controllerClass = 'App\\'.$this->name.'\\Modules\\'.$matchedRoute->module().'\\'.$matchedRoute->module().'Controller';
+    //$controllerClass = 'src\\controller\\'.$matchedRoute->module().'Controller';
+    $controllerClass = 'src\\controller\\'.$matchedRoute->module().'Controller';
     return new $controllerClass($this, $matchedRoute->module(), $matchedRoute->action());
   }
  

@@ -1,80 +1,238 @@
-html, body{
-	width: 100%;
-	height: 100%;
-	margin: 0;
-}
-
-header{
-	display: flex;
-	justify-content: space-around;
-	width: 100%;
-	height: 1%;
-	border-bottom: solid gray;
-}
-
-a{
-	text-decoration: none;
-}
-
 h1{
-	font-size: 22px;
+	font-size: 1.60em !important;
+	margin-top: 0px;
 }
 
 h1 a{
-	color: #3eb18b !important;
+	color: #03CEA4 !important;
 }
 
-nav{
-	width : 20%;
+nav a{
+	color: #454545;
+}
+
+li{
+	list-style: none;
 }
 
 nav ul{
 	display: flex;
-	width: 100%;
-	list-style: none;
 }
 
-nav ul li{
-	margin-left: 20px;
+header{
+	margin-top: 20px !important;
 }
 
-#lireSuite{
-	border: solid #3eb18b;
-	
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-bottom: 6px;
-	padding-top: 6px;
-
-	background-color: #3eb18b;
+#dernier-chapitre a{
+	border: solid #03CEA4;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	background-color: #03CEA4;
 	color: white;
-
-	height: 20px;
-
+	text-align: center;
 	margin-top: 4%;
 }
 
-#main-head{
-	margin-top: 3%;
-	width: 100%;
-	justify-content: space-around;
-	display: flex;
-	height: 200px;
+#dernier-chapitre{
+	border-bottom: 1px solid black;
+	padding-bottom: 1%;
 }
 
-#main-head-home{
-	width: 50%;
-	color: #256195;
-	font-size: 25px;
+.chapters{
+	background-color: white;
+	text-align: center;
+	margin-left: 5%;
+	height: 100px;
+	margin-bottom: 3%;
+	width: 28%;
+	font-size: 1.6em;
 }
 
-#main-head-home p{
-	color: black;
-	font-size: 20px;
-	width: 70%;
+#main-content{
+	background-color: #e7e4e4;
+	height: 100%;
 }
 
-#main-head-home h2{
-	width: 60%;
+#main-content h3{
+	padding-top: 2%;
 	margin: 0;
+	margin-left: 3%;
+	margin-bottom: 3%;
+	text-decoration: underline;
+}
+
+#main-content .container{
+	margin-left: 7%;
+	margin-right: 7%;
+	width: 86%;
+}
+
+#main-content aside img{
+	width: 200px;
+	height: 200px;
+	margin-bottom: 20px;
+}
+
+.livre2{
+	font-size: 2em;
+	padding: 0;
+	padding-top: 20px;
+	width: 94%;
+	height: 460px;
+	margin-left: 5%;
+	background-color: white;
+	border-left: green solid 2px;
+	padding-left: 20px;
+	margin-bottom: 3%;
+	display: flex !important;
+}
+
+aside #images{
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+}
+
+aside p{
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+aside h4{
+	text-align: center;
+	text-decoration: underline;
+	color: #03CEA4 !important;
+	font-size: 40px !important;
+	margin-bottom: 20px;
+}
+
+#title-comments{
+	text-decoration: underline;
+	margin-top: 5%;
+	margin-bottom: 2%;
+}
+
+.ecran-tel{
+	display: none;
+}
+
+.livre{
+	display: none;
+}
+
+#comments-part{
+	border-left: 1px blue solid;
+	font-size: 1.5em;
+}
+
+#petit-comment{
+	font-size: 17px !important;
+}
+
+.barre-header{
+	margin: 0px !important;
+}
+
+#presentation-chapters{
+	border-bottom: 1px solid gray;
+	color: #324EA5;
+	font-size: 2em;
+}
+
+#presentation-chapters h2{
+	font-size: 3em !important;
+}
+
+#texte-chapters{
+	font-size: 1.5em;
+	padding-top: 2%;
+}
+
+.flash{
+	margin: 0;
+	margin-bottom: -20px;
+}
+
+@media screen and (min-width: 320px) and (orientation: portrait) and (max-height: 736px)
+{
+	.chapters{
+		font-size: 0.5em;
+		margin-left:0%;
+		width: 90%;
+	}
+
+	.ecran-tel{
+		display: block;
+	}
+
+	.ecran-pc{
+		display: none;
+	}
+
+	h1{
+	font-size: 0.8em !important;
+	margin-top: 3%;
+	}
+
+	#dernier-chapitre h2{
+		font-size: 1.2em;
+	}
+
+	#dernier-chapitre{
+		font-size: 0.8em;
+		padding-bottom: 5%;
+	}
+	#dernier-chapitre a{
+		margin-left: 4%;
+	}
+
+	.livre img{
+		display: none;
+	}
+
+	.livre{
+		font-size: 0.8em;
+		background-color: white;
+		border-left: green solid 2px;
+		padding-left: 2%;
+		margin-bottom: 3%;
+		display: block !important;
+		text-align: center;
+	}
+
+	.livre h4{
+		text-align: center;
+		text-decoration: underline;
+		margin-bottom: 5%;
+		color: #03CEA4 !important;
+	}
+
+	.livre2{
+		display: none !important;
+	}
+
+	h4{
+		font-size: 1.6em;
+	}
+
+
+	#presentation-chapters{
+		border-bottom: 1px solid gray;
+		color: #324EA5;
+		font-size: 1em;
+	}
+
+	#presentation-chapters h2{
+		font-size: 1.4em !important;
+	}
+
+	#texte-chapters{
+	font-size: 1em;
+	padding-top: 2%;
+	}
+
+	#comments-part{
+		border-left: 1px blue solid;
+		font-size: 0.8em;
+	}
 }

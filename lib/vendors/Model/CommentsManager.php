@@ -63,7 +63,7 @@ abstract class CommentsManager extends Manager
    * @param $id L'identifiant du commentaire
    * @return void
    */
-  abstract public function report(Comment $comment);
+  abstract public function report($id);
 
   /**
    * Méthode permettant d'obtenir un commentaire spécifique.

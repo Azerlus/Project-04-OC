@@ -69,12 +69,12 @@ class CommentsManagerPDO extends CommentsManager
     return $comments;
   }
 
-  public function report(Comment $comment)
+  public function report($id)
   {
    $q = $this->dao->prepare('UPDATE comments SET report = :report WHERE id = :id');
 
    $q->bindValue(':report', 1);
-   $q->bindValue(':id', $comment->id(), \PDO::PARAM_INT);
+   $q->bindValue(':id', $id, \PDO::PARAM_INT);
 
    $q->execute(); 
   }

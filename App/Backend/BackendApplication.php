@@ -21,7 +21,8 @@ class BackendApplication extends Application
 		}
 		else
 		{
-			$controller = new Modules\Connexion\ConnexionController($this, 'Connexion', 'Index');
+			$controllerPath = 'src\\controller\\connexionController';
+			$controller = new $controllerPath($this, 'Connexion', 'Index');
 		}
 
 		$controller->execute();

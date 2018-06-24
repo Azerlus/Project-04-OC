@@ -1,12 +1,12 @@
 <?php
-namespace App\Backend\Modules\Chapters;
+namespace src\controller;
  
 use \BlogFram\BackController;
 use \BlogFram\HTTPRequest;
 use \Entity\Chapters;
 use \Entity\Comment;
  
-class ChaptersController extends BackController
+class ChaptersBackController extends BackController
 {
   protected $defaultAuthor;
 
